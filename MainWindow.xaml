@@ -1,0 +1,28 @@
+﻿<Window x:Class="DevelopmentEnvironmentQuicklaunch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Development Environment Quicklaunch" Height="500" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <Button Name="AddSolutionButton" Content="Add Solution" Width="120" Margin="0,0,10,0" Click="AddSolutionButton_Click"/>
+            <Button Name="RemoveSolutionButton" Content="Remove Selected" Width="120" Click="RemoveSolutionButton_Click"/>
+        </StackPanel>
+        <ListBox Name="SolutionFilesListBox" Grid.Row="1" SelectionMode="Extended">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Launch" Click="LaunchSolutionMenuItem_Click"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,10,0,0" VerticalAlignment="Bottom">
+            <CheckBox Name="LaunchTextEditorCheckBox" Content="Launch Text Editor" Margin="0,0,20,0"/>
+            <Button Name="StartButton" Content="Start" Width="120" Margin="0,0,20,0" Click="StartButton_Click"/>
+            <Button Name="SettingsButton" Content="Settings" Width="120" Click="SettingsButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
